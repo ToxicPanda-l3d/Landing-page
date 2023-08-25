@@ -7,7 +7,7 @@ stages{
 	stages{
 		stage('GetCode'){
 	steps{
-		git branch: 'main', url: 'https://github.com/ToxicPanda-l3d/Landing-page/tree/main/project.git'
+		git branch: 'main', url: 'https://github.com/ToxicPanda-l3d/Landing-page.git'
 		}
 	}
 //	stage('Build'){
