@@ -1,0 +1,23 @@
+pipeline{
+	stages{
+		stage('GetCode'){
+	steps{
+		git branch: 'main', url: 'https://github.com/ToxicPanda-l3d/Landing-page.git'
+		}
+	}
+	stage('Build'){
+	steps{
+		sh 'mvn clean package'
+		}
+	}
+	stage('SonarQube analysis') {
+//	 	def scannerHome tool 'SonarScanner 4.1';
+	steps{
+	withSonarQubeEnv('SonarQube 9.5.0") {
+//	sh "${scannerHome}/bin/sonar-scanner"
+//	sh "mvn sonar: sonar"
+	}
+		}
+		}
+	}
+}
